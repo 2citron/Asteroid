@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Bullet.tscn" type="PackedScene" id=2]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+bullet = ExtResource( 2 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -48, 96 )
+rotation = 1.5708
+scale = Vector2( 2, 1 )
+polygon = PoolVector2Array( -48, -128, -64, -32, -48, -16, -32, -32 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 16, 0 )
+rotation = 1.5708
+polygon = PoolVector2Array( 16, -16, 0, -64, -32, 32, 0, 48, 32, 32 )
+
+[node name="Canon" type="Position2D" parent="."]
+position = Vector2( 96, 0 )

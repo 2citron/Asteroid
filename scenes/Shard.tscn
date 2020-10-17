@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Shard.gd" type="Script" id=1]
+
+[node name="Shard" type="Area2D"]
+collision_layer = 2
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="Polygon2D" parent="."]
+position = Vector2( 2.66667, 2.66667 )
+scale = Vector2( 0.666667, 0.666667 )
+polygon = PoolVector2Array( -16, -16, 8, -16, 8, -8, 8, 8, -2.74606, 8, -16, 8 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
+[connection signal="body_entered" from="." to="." method="_on_Shard_body_entered"]
